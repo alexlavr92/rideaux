@@ -1,0 +1,80 @@
+.how-work {
+    position: relative;
+
+    .img-wrapper {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 25%;
+        // height: 100%;
+        // width: 25%;
+        // border-radius: 45%;
+        overflow: hidden;
+
+        picture,
+        img {
+            // height: 100%;
+            // object-fit: cover;
+            // width: 100%;
+            display: block;
+        }
+    }
+
+    h2 {
+        padding-bottom: 80px;
+    }
+
+    .list {
+        @include flex-block;
+        @include flex-column;
+        gap: 1.2rem;
+
+        li {
+            gap: 1.5rem;
+            align-items: center;
+
+            span:first-child {
+                @include flex-block;
+                align-items: center;
+                justify-content: center;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background: #23223C;
+                color: $color-text-green;
+                font-family: $font-title;
+                font-weight: $font-medium;
+                font-size: 2rem;
+                line-height: 120%;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+                position: relative;
+                padding-bottom: 1%;
+                //display: block;
+
+
+            }
+
+            .divider {
+                width: 9rem;
+                // height: 1px;
+                border: none;
+                border-top: 2px dashed rgba($color-text-main, .6);
+            }
+
+            >span:last-child {
+                flex: 1;
+                position: relative;
+                font-size: .8rem;
+                line-height: 150%;
+                letter-spacing: 0.01em;
+                color: rgba($color-text-main, .8);
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 3rem;
+    }
+}

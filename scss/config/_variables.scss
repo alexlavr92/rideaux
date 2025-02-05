@@ -1,0 +1,36 @@
+// TYPOGRAPHY
+// ---------------------------------------------------------------
+$font-body: "Inter";
+// $font-title: "Doorman";
+$font-normal: normal;
+$font-medium: 500;
+$font-light: 300;
+$font-semibold: 600;
+$font-bold: bold;
+$font-title: 'Cormorant Garamond';
+// $font-tertiary: "Oswald", sans-serif;
+
+$min-font-size: 14;
+$max-font-size: 24;
+// $root-font-size: 16;
+$body-font-size: calcFluidFontSize($min-font-size, $max-font-size, 320, 1920, px);
+$body-line-height: 140;
+
+
+// COLORS
+$color-bg-blue: #151431;
+$color-bg-dark: #0F0E24;
+
+$color-text-main: #FFFFFF;
+$color-text-green: #2C9C8D;
+// ---------------------------------------------------------------
+
+$placeholder-color: rgba(29, 36, 42, 0.7);
+
+// Animation
+// ---------------------------------------------------------------
+
+$transition: all .4s ease;
+
+// Box Sizing
+$box-border: border-box;

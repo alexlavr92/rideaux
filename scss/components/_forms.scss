@@ -1,0 +1,95 @@
+.form-inner-wrapper {
+    .request-success-wrapper {
+        display: none;
+    }
+
+    .form-title {
+        font-family: $font-title;
+        font-weight: $font-medium;
+        font-size: 2rem;
+        letter-spacing: 0.02em;
+        padding-bottom: 50px;
+    }
+
+    .form-default {
+        // gap: 2.5rem;
+        column-gap: 2.5rem;
+        row-gap: 2rem;
+        align-items: flex-end;
+    }
+
+    .form-btns {
+        margin-left: auto;
+        position: relative;
+    }
+
+    .btn-green.btn {
+        border: none;
+        outline: none;
+        height: 52px;
+        // line-height: 52px;
+
+    }
+
+    .btn-ellipse {
+        margin-left: 5rem;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid $color-text-main;
+        position: relative;
+
+        @media screen {
+            @media (max-width: 1599px) {
+                margin-left: 2rem;
+            }
+
+            @media (max-width: 1366px) {
+                margin-left: 1rem;
+            }
+        }
+
+        span {
+            position: absolute;
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            width: 90%;
+            height: 1px;
+            background: $color-text-main;
+            animation: 3s linear 0s infinite normal none running btn-right;
+
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid $color-text-main;
+                border-right: 1px solid $color-text-main;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                top: -3px;
+            }
+        }
+    }
+
+    .btn-wa {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+
+        &:hover {
+            background: transparent;
+        }
+
+        img {
+            margin: 0 auto;
+        }
+    }
+}

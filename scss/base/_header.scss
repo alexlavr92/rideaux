@@ -1,0 +1,205 @@
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+
+
+    &.sticky {
+        .header-outer {
+            background: rgba($color-bg-dark, .9);
+        }
+    }
+}
+
+.header-outer {
+    width: 100%;
+    padding: 30px 0;
+    background: rgba($color-bg-dark, 0.2);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: all;
+    transition: $transition;
+}
+
+.header-inner {
+    align-items: center;
+    // font-family: $font-title;
+}
+
+.header-menu {
+    position: relative;
+    z-index: 1;
+
+    .header-menu_btn {
+        position: relative;
+        width: 50px;
+        height: 30px;
+        align-items: center;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: $color-text-main;
+            left: 0;
+            transition: $transition;
+        }
+
+
+        &:before {
+            top: -1px;
+        }
+
+        &:after {
+            bottom: 0;
+        }
+
+        span {
+            // position: absolute;
+            width: 100%;
+            height: 2px;
+            background: $color-text-main;
+            border-radius: 10px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: $transition;
+
+        }
+    }
+
+
+    .header-menu-wrapper {
+        position: absolute;
+        padding: 20px;
+        background: $color-text-green;
+        margin-top: 25px;
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -17px;
+            left: 0;
+            border-style: solid;
+            border-width: 0 25px 17px 25px;
+            border-color: transparent transparent $color-text-green transparent;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 8px;
+            text-transform: uppercase;
+            font-weight: $font-bold;
+            font-family: $font-title;
+            font-size: .7rem;
+            white-space: nowrap;
+            line-height: 170%;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    &:hover {
+        .header-menu_btn {
+
+            &:before,
+            &:after,
+            span {
+                background: $color-text-green;
+            }
+        }
+
+        .header-menu-wrapper {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}
+
+.header-logo {
+    margin-left: 4rem;
+
+    @media screen {
+        @media (max-width: 1599px) {
+            margin-left: 3rem;
+        }
+    }
+}
+
+.header-right-wrapper {
+    flex: 1;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    align-items: center;
+
+    @media screen {
+        @media (max-width: 1599px) {
+            margin-left: 2rem;
+            padding-left: 1.5rem;
+        }
+    }
+
+    .header-address {
+        flex-direction: column;
+        font-size: .7rem;
+        line-height: 170%;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        gap: 0;
+        // font-weight: $font-bold;
+
+        &:before {
+            content: attr(data-before);
+            font-family: $font-title;
+            color: rgba($color-text-main, 0.4);
+        }
+    }
+
+    .link-phone {
+        position: relative;
+        font-size: 1rem;
+        font-family: $font-title;
+        font-weight: $font-bold;
+        margin-left: auto;
+        padding-left: 45px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-image: url(../media/icons/phone.svg);
+            @include bg-style;
+        }
+    }
+
+    .btn {
+        margin-left: 4rem;
+
+        @media screen {
+            @media (max-width: 1650px) {
+                margin-left: 2rem;
+            }
+        }
+
+    }
+}

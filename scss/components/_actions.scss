@@ -1,0 +1,65 @@
+.actions-items {
+    align-items: center;
+    gap: 3rem;
+
+    &+.form-inner-wrapper {
+        margin-top: 70px;
+    }
+}
+
+.action-item {
+    width: calc(50% - 1.5rem);
+    position: relative;
+    height: 20vw;
+    min-height: 382px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    picture,
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.action-item_descript {
+    position: absolute;
+    width: 100%;
+    padding: 0 1.5rem;
+    padding-bottom: 0;
+    left: 0;
+    top: calc(60% - 1.5rem);
+    // height: 40%;
+    @include flex-column;
+    font-family: $font-title;
+    gap: 30px;
+}
+
+.action-item_label {
+    padding: 5px 15px;
+    background-color: #DF0000;
+    border-radius: 500px;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.action-item_title {
+    font-size: 1.7rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-text-main;
+
+    >span {
+        font-weight: $font-bold;
+    }
+}

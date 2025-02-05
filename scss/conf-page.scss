@@ -1,0 +1,47 @@
+/*
+Name: 			conf-page.css
+Written by: 	Lavrinenko Aleksandr
+Theme Version:	1.0
+*/
+
+// COMMON IMPORTS
+@import "config/imports";
+
+// HELPERS
+@import "base/helpers";
+
+// BASE
+@import "base/base";
+
+// faq
+// @import 'components/faq';
+
+
+.conf-page {
+    padding: 100px 0;
+
+    @media screen and (max-width: 767px) {
+        padding: 50px 0;
+    }
+
+    .w-big {
+        margin-left: auto;
+    }
+
+    h2 {
+        margin-top: 50px;
+        padding-bottom: 60px;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 30px;
+            font-size: 1.55rem;
+            line-height: 2rem;
+        }
+    }
+
+    .link:hover,
+    .link:active {
+        // color: $color-text-second;
+        border-color: transparent;
+    }
+}

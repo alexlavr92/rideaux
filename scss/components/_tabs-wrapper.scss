@@ -1,0 +1,34 @@
+.tabs-switchers {
+    @include flex-column;
+    gap: 30px;
+
+    .tabs-switcher {
+        width: 190px;
+        padding: 15px 0;
+        text-align: center;
+        border: 1px solid $color-text-green;
+        letter-spacing: 0.02em;
+        font-size: .9rem;
+        font-weight: 500;
+        border-radius: 500px;
+        transition: $transition;
+
+        &.active,
+        &:not(.active):hover {
+            background: $color-text-green;
+            border-color: transparent;
+            // color: $color-text-main;
+        }
+    }
+}
+
+
+.reviews {
+    h2 {
+        padding-bottom: 80px;
+    }
+}
+
+.tabs-content:not(.active) {
+    display: none;
+}

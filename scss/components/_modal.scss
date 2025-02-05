@@ -1,0 +1,30 @@
+.modal.modal-custom {
+    width: 80%;
+    max-width: none;
+    padding: 0;
+    background: #23223C;
+    border-radius: 0;
+
+
+    @media screen {
+        @media (max-width: 1599px) {
+            width: 95%;
+        }
+
+        @media (max-width: 1499px) {
+            width: 100%;
+        }
+    }
+}
+
+.modal-custom {
+    .modal-wrapper {
+        padding: 70px 50px 90px;
+    }
+
+    a.close-custom {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+}
