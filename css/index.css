@@ -1868,6 +1868,13 @@ header.sticky .header-outer {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+@media screen and (max-width: 1399px) {
+  .form-inner-wrapper .form-default {
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+}
 .form-inner-wrapper .form-btns {
   margin-left: auto;
   position: relative;
@@ -2045,14 +2052,17 @@ header.sticky .header-outer {
           justify-content: flex-start;
 }
 .types-item .types-item_img {
-  height: 225px;
-  padding: 40px 30px;
+  height: 12vw;
+  padding: 2rem 1.4rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
