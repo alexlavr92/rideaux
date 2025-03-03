@@ -25,6 +25,16 @@ Theme Version:	1.0
         @media (min-height: 715px) {
             height: 95vh;
         }
+
+        @media (max-width: 1199px) {
+            height: 100vh;
+            min-height: 1024px;
+        }
+
+        @media (max-width: 767px) {
+            min-height: 568px;
+
+        }
     }
 
     .new-container {
@@ -40,6 +50,13 @@ Theme Version:	1.0
         width: 70%;
         height: 100%;
         z-index: -1;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                width: 100%;
+
+            }
+        }
 
         &:before {
             content: "";
@@ -71,7 +88,15 @@ Theme Version:	1.0
     width: 70%;
 
     @media screen {
-        @media (min-width: 1600px) {}
+        @media (max-width: 1199px) {
+            margin-top: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 767px) {
+            text-align: center;
+            gap: 20px;
+        }
     }
 
     h1 {
@@ -79,12 +104,32 @@ Theme Version:	1.0
         clip-path: polygon(0% 10%, 0% 10%, 0% 100%, 0% 100%);
         opacity: 0;
         animation: titleAnimation 1s linear .3s forwards;
+
+
     }
 
     .subtitle {
         font-size: 1.2rem;
         line-height: 93%;
         letter-spacing: 0.02em;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: 1.6rem;
+
+                br {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 767px) {
+                font-size: 1.2rem;
+
+                br {
+                    display: block;
+                }
+            }
+        }
     }
 }
 
@@ -99,6 +144,23 @@ Theme Version:	1.0
     // rgba(255, 255, 255, 0.4);
     transition: $transition;
 
+    @media screen {
+        @media (max-width: 1199px) {
+            left: 40px;
+            bottom: 13vw;
+            border-color: $color-text-main;
+        }
+
+        @media (max-width: 767px) {
+            &.aos-animate {
+                left: 50%;
+                transform: translateX(-50%) !important;
+                width: 60px;
+                height: 60px;
+            }
+
+        }
+    }
 
 
     span {

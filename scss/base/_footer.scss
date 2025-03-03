@@ -3,6 +3,20 @@ footer {
     padding: 7rem 0;
     background: $color-bg-dark;
 
+    @media screen {
+        @media (max-width: 1199px) {
+            padding: 4rem 0;
+
+            .footer-inner {
+                @include flex-column;
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            position: relative;
+        }
+    }
 
     // .footer-inner {
     //     align-items: flex-end;
@@ -20,6 +34,26 @@ footer {
         // font-family: $font-title;
         // font-weight: $font-medium;
         gap: 20px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: .8rem;
+            }
+
+            @media (max-width: 767px) {
+                @include flex-column;
+                text-align: center;
+                align-items: center;
+                font-size: .9rem;
+            }
+        }
+    }
+
+    @media screen {
+        @media (max-width: 767px) {
+            width: 100%;
+            align-items: center;
+        }
     }
 }
 
@@ -28,15 +62,43 @@ footer {
     margin-left: auto;
     // align-items: flex-end;
     padding-left: 7rem;
+
+    @media screen {
+        @media (max-width: 1199px) {
+            margin-left: 0;
+            padding-left: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 767px) {
+            justify-content: center;
+            @include flex-column;
+            align-items: center;
+        }
+    }
 }
 
 .footer-nav {
     gap: 4rem;
+
+    @media screen {
+        @media (max-width: 767px) {
+            @include flex-column;
+            align-items: center;
+            gap: 15px;
+        }
+    }
 }
 
 .footer-nav-column {
     @include flex-column;
     gap: 15px;
+
+    @media screen {
+        @media (max-width: 767px) {
+            align-items: center;
+        }
+    }
 
     .footer-nav-link {
         text-transform: uppercase;
@@ -46,6 +108,12 @@ footer {
         font-weight: $font-medium;
         border-bottom: 1px solid transparent;
         transition: $transition;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                font-size: .9rem;
+            }
+        }
 
         &:hover {
             border-color: $color-text-main;

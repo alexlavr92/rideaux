@@ -2,6 +2,18 @@
     @include flex-column;
     gap: 30px;
 
+    @media screen {
+        @media (min-width: 768px) and (max-width: 1199px) {
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
+            gap: 15px;
+        }
+    }
+
     .tabs-switcher {
         width: 190px;
         padding: 15px 0;
@@ -12,6 +24,12 @@
         font-weight: 500;
         border-radius: 500px;
         transition: $transition;
+
+        @media screen {
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+        }
 
         &.active,
         &:not(.active):hover {
@@ -26,9 +44,26 @@
 .reviews {
     h2 {
         padding-bottom: 80px;
+
+        @media screen {
+            @media (max-width: 767px) {
+                padding-bottom: 50px;
+                text-align: center;
+            }
+        }
     }
+
 }
 
 .tabs-content:not(.active) {
     display: none;
+}
+
+@media screen {
+    @media (max-width: 1199px) {
+        .tabs-wrapper {
+            @include flex-column;
+            gap: 50px;
+        }
+    }
 }

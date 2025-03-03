@@ -1,6 +1,12 @@
 .how-work {
     position: relative;
 
+    @media screen {
+        @media (max-width: 1199px) {
+            padding-top: 0 !important;
+        }
+    }
+
     .img-wrapper {
         position: absolute;
         left: 0;
@@ -11,6 +17,17 @@
         // width: 25%;
         // border-radius: 45%;
         overflow: hidden;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                position: relative;
+                width: 100%;
+                max-width: none;
+                top: auto;
+                transform: none;
+                margin-bottom: 80px;
+            }
+        }
 
         picture,
         img {
@@ -23,6 +40,16 @@
 
     h2 {
         padding-bottom: 80px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                padding-bottom: 50px;
+            }
+
+            @media (max-width: 767px) {
+                text-align: center;
+            }
+        }
     }
 
     .list {
@@ -30,9 +57,29 @@
         @include flex-column;
         gap: 1.2rem;
 
+        @media screen {
+            @media (max-width: 767px) {
+                gap: 50px;
+            }
+        }
+
         li {
             gap: 1.5rem;
             align-items: center;
+
+            @media screen {
+                @media (max-width: 767px) {
+                    @include flex-column;
+                    gap: 20px;
+                    align-items: center;
+
+                    text-align: center;
+
+                    hr {
+                        display: none;
+                    }
+                }
+            }
 
             span:first-child {
                 @include flex-block;
@@ -70,11 +117,24 @@
                 line-height: 150%;
                 letter-spacing: 0.01em;
                 color: rgba($color-text-main, .8);
+
+                @media screen {
+                    @media (max-width: 767px) {
+                        font-size: .8rem;
+                    }
+                }
             }
         }
     }
 
     .btn {
         margin-top: 3rem;
+
+        @media screen {
+            @media (max-width: 767px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
     }
 }

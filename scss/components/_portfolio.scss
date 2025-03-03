@@ -1,17 +1,56 @@
 .portfolio {
     h2 {
         padding-bottom: 4rem;
+
+        @media screen {
+            @media (max-width: 767px) {
+                padding-bottom: 50px;
+            }
+        }
     }
 
     .w-big {
         gap: 3rem;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                gap: 30px;
+            }
+
+            @media (max-width: 767px) {
+                display: inline-block;
+                width: auto;
+                margin-left: 5px;
+            }
+        }
+
         .portfolio-column:first-child {
             width: calc(52% - 1.5rem);
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    width: calc(50% - 15px);
+                }
+
+                @media (max-width: 767px) {
+                    width: auto;
+                }
+            }
         }
 
         .portfolio-column:last-child {
             width: calc(48% - 1.5rem);
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    width: calc(50% - 15px);
+                }
+
+                @media (max-width: 767px) {
+                    width: auto;
+                    margin-left: 5px;
+                }
+            }
         }
 
 
@@ -33,6 +72,24 @@
             transition: $transition;
             opacity: 0;
             @include bg-style;
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    bottom: 20px;
+                    right: 20px;
+                    top: auto;
+                    left: auto;
+                    transform: none;
+                    opacity: 1;
+                }
+
+                @media (max-width: 767px) {
+                    bottom: 10px;
+                    right: 10px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
 
         img {
@@ -50,10 +107,58 @@
 .portfolio-items {
     position: relative;
 
+    @media screen {
+        @media (max-width: 1199px) {
+            @include flex-column;
+
+            >.portfolio-column:first-child {
+                flex-direction: row;
+                gap: 30px;
+                padding-bottom: 30px;
+
+                .portfolio-item {
+                    width: calc(50% - 15px);
+                    height: 60vw;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            display: block;
+            white-space: nowrap;
+            overflow: auto;
+            width: calc(100% + 30px);
+            margin: 0 -15px;
+            padding: 0 15px;
+            padding-bottom: 10px;
+
+
+            >.portfolio-column:first-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
     >.portfolio-column:first-child {
         flex: 1;
         width: 25%;
         padding-right: 3rem;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                width: 100%;
+                padding-right: 0;
+
+            }
+
+            @media (max-width: 767px) {
+                display: inline-block;
+                width: auto;
+
+            }
+        }
+
+
 
         // .portfolio-item:first-child {
         //     height: 23vw;
@@ -77,6 +182,27 @@
     .portfolio-column {
         gap: 3rem;
         @include flex-column;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                gap: 30px;
+            }
+
+            @media (max-width: 767px) {
+                flex-direction: row;
+                display: inline-block !important;
+
+                .portfolio-item {
+                    width: 60vw !important;
+                    height: 70vw !important;
+
+                    &:not(:first-child) {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+
 
         .width2 {
             flex: 1;

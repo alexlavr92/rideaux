@@ -1,5 +1,6 @@
 .marquee-wrapper {
     width: 100%;
+    overflow: hidden;
 
     span {
         font-family: $font-title;
@@ -26,6 +27,16 @@
     color: rgba($color-text-main, 0.8);
     position: relative;
 
+    @media screen {
+        @media (max-width: 1199px) {
+            font-size: .9rem;
+        }
+
+        @media (max-width: 767px) {
+            padding-top: 100px;
+        }
+    }
+
 
     .new-container {
         position: relative;
@@ -35,8 +46,25 @@
         row-gap: 1.5rem;
         column-gap: 2.2rem;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                @include flex-column;
+                gap: 20px;
+            }
+        }
+
         >div {
             width: calc(33.3% - 1.46rem);
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    width: 100% !important;
+                }
+
+                @media (max-width: 767px) {
+                    text-align: center;
+                }
+            }
         }
 
         >div:first-child {
@@ -50,14 +78,52 @@
         bottom: 100%;
         margin-bottom: -50px;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                width: 17rem;
+                left: 10px;
+                margin-bottom: 45px;
+            }
+
+            @media (max-width: 767px) {
+                width: 11rem;
+                left: 50%;
+                transform: translateX(-50%);
+
+            }
+        }
     }
 
     .count-wrapper {
         margin-top: 100px;
         gap: 5rem;
 
+        @media screen {
+            @media (max-width: 1199px) {
+                margin-top: 70px;
+                column-gap: 100px;
+                row-gap: 50px;
+            }
+
+            @media (max-width: 767px) {
+                @include flex-column;
+                gap: 50px;
+            }
+        }
+
         li {
             width: calc(25% - 3.8rem);
+
+            @media screen {
+                @media (max-width: 1199px) {
+                    width: calc(50% - 50px);
+                }
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
 
             >span {
                 display: block;
@@ -73,6 +139,10 @@
                     @media screen {
                         @media (max-width: 1650px) {
                             font-size: 1.2rem;
+                        }
+
+                        @media (max-width: 1199px) {
+                            font-size: 2rem;
                         }
                     }
                 }
@@ -90,6 +160,10 @@
                     @media screen {
                         @media (max-width: 1650px) {
                             white-space: initial;
+                        }
+
+                        @media (max-width: 767px) {
+                            font-size: 1rem;
                         }
                     }
                 }

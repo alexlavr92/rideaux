@@ -1,3 +1,11 @@
+.blocker {
+    z-index: 10;
+
+    @media screen and (max-width: 767px) {
+        padding: 0;
+    }
+}
+
 .modal.modal-custom {
     width: 80%;
     max-width: none;
@@ -20,11 +28,21 @@
 .modal-custom {
     .modal-wrapper {
         padding: 70px 50px 90px;
+
+        @media screen {
+            @media (max-width: 767px) {
+                padding: 70px 20px 50px;
+            }
+        }
     }
 
     a.close-custom {
         position: absolute;
         top: 20px;
         right: 30px;
+
+        @media screen and (max-width: 767px) {
+            right: 20px;
+        }
     }
 }

@@ -9,6 +9,12 @@
         font-size: 2rem;
         letter-spacing: 0.02em;
         padding-bottom: 50px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                text-align: center;
+            }
+        }
     }
 
     .form-default {
@@ -21,12 +27,39 @@
             @media (max-width: 1399px) {
                 column-gap: 2rem;
             }
+
+            @media (max-width: 1199px) {
+                @include flex-column;
+                gap: 30px;
+
+                .default-input-wrapper,
+                .default-select-wrapper {
+                    width: 100%;
+                }
+            }
         }
     }
 
     .form-btns {
         margin-left: auto;
         position: relative;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                @include flex-block;
+                gap: 50px;
+                margin: 0 auto;
+                width: 100%;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 767px) {
+                @include flex-column;
+                gap: 15px;
+            }
+        }
+
     }
 
     .btn-green.btn {
@@ -35,6 +68,11 @@
         height: 52px;
         // line-height: 52px;
 
+        @media screen {
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+        }
     }
 
     .btn-ellipse {
@@ -53,6 +91,11 @@
 
             @media (max-width: 1366px) {
                 margin-left: 1rem;
+            }
+
+            @media (max-width: 1199px) {
+                margin-left: auto;
+                margin-right: 20px;
             }
         }
 
@@ -89,6 +132,20 @@
         width: 100%;
         text-align: center;
         margin-bottom: 20px;
+
+        @media screen {
+            @media (max-width: 1199px) {
+                position: relative;
+                width: auto;
+                order: -1;
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 767px) {
+                order: 1;
+                width: 100%;
+            }
+        }
 
         &:hover {
             background: transparent;

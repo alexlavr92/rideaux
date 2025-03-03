@@ -577,11 +577,27 @@ section.dark-blue {
   margin: 4rem 0;
   padding: 7.5rem 0 6rem;
 }
+@media screen and (max-width: 767px) {
+  section.dark-blue {
+    padding: 4.5rem 0;
+    margin: 2rem 0;
+  }
+}
 section + section {
   padding: 4rem 0;
 }
+@media screen and (max-width: 767px) {
+  section + section {
+    padding: 3rem 0;
+  }
+}
 section:first-child {
   margin-bottom: 4rem;
+}
+@media screen and (max-width: 767px) {
+  section:first-child {
+    margin-bottom: 3rem;
+  }
 }
 
 .new-container {
@@ -593,6 +609,17 @@ section:first-child {
     width: 90%;
   }
 }
+@media screen and (max-width: 1199px) {
+  .new-container {
+    width: 100%;
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .new-container {
+    padding: 0 15px;
+  }
+}
 
 .w-big {
   width: 75%;
@@ -601,6 +628,11 @@ section:first-child {
 @media screen and (max-width: 1599px) {
   .w-big {
     width: 64vw;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .w-big {
+    width: 100%;
   }
 }
 
@@ -664,6 +696,11 @@ a {
   -webkit-box-shadow: 0 0 15px 0 rgba(44, 156, 141, 0.8), 0 0 10px 0 rgba(255, 255, 255, 0.15);
           box-shadow: 0 0 15px 0 rgba(44, 156, 141, 0.8), 0 0 10px 0 rgba(255, 255, 255, 0.15);
 }
+@media screen and (max-width: 1199px) {
+  .btn {
+    font-size: 1rem;
+  }
+}
 
 h1,
 h2,
@@ -692,6 +729,18 @@ h1,
   text-transform: uppercase;
   font-family: "Cormorant Garamond";
 }
+@media screen and (max-width: 1199px) {
+  h1,
+  .h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 3rem;
+  }
+}
 
 h2 {
   font-size: 1.8rem;
@@ -700,6 +749,16 @@ h2 {
   text-transform: uppercase;
   font-family: "Cormorant Garamond";
   font-weight: 500;
+}
+@media screen and (max-width: 1199px) {
+  h2 {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 
 input[type=radio],
@@ -852,6 +911,11 @@ input[type=checkbox] {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .swiper-navigation {
+    gap: 1.5rem;
+  }
+}
 .swiper-navigation .swiper-arrow {
   width: 2.5rem;
   height: 2px;
@@ -895,6 +959,24 @@ input[type=checkbox] {
   border-right: 2px solid #FFFFFF;
   top: -5px;
 }
+@media screen and (min-width: 1200px) {
+  .swiper-navigation .swiper-pagination {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .swiper-navigation .swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    margin: 0 7px;
+    border: 2px solid #2C9C8D;
+  }
+  .swiper-navigation .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #2C9C8D;
+    border-color: transparent;
+  }
+}
 
 .default-input-wrapper {
   display: -webkit-box;
@@ -920,6 +1002,11 @@ input[type=checkbox] {
   letter-spacing: 0.01em;
   color: rgba(255, 255, 255, 0.8);
   display: block;
+}
+@media screen and (max-width: 1199px) {
+  .default-input-wrapper label {
+    font-size: 1rem;
+  }
 }
 .default-input-wrapper input {
   border: 1px solid transparent;
@@ -978,6 +1065,12 @@ input[type=checkbox] {
     width: 22vw;
   }
 }
+@media screen and (max-width: 1199px) {
+  .default-input-wrapper input {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 .default-input-wrapper input:hover, .default-input-wrapper input:focus, .default-input-wrapper input.active {
   border-color: #FFFFFF !important;
 }
@@ -1007,6 +1100,11 @@ input[type=checkbox] {
   color: #CC0A0A;
   font-size: 0.5rem;
 }
+@media screen and (max-width: 1199px) {
+  .default-input-wrapper.invalid .invalid-text {
+    font-size: 0.9rem;
+  }
+}
 
 .default-select-wrapper {
   display: -webkit-box;
@@ -1033,12 +1131,22 @@ input[type=checkbox] {
   color: rgba(255, 255, 255, 0.8);
   display: block;
 }
+@media screen and (max-width: 1199px) {
+  .default-select-wrapper label {
+    font-size: 1rem;
+  }
+}
 .default-select-wrapper .select2-container--custom-select {
   width: 18vw;
 }
 @media screen and (max-width: 1599px) {
   .default-select-wrapper .select2-container--custom-select {
     width: 20vw;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .default-select-wrapper .select2-container--custom-select {
+    width: 100%;
   }
 }
 
@@ -1048,6 +1156,7 @@ input[type=checkbox] {
   line-height: 52px;
   border-radius: 50px;
   padding: 14px 25px;
+  padding-top: 16px;
   width: 100%;
   background: rgba(164, 164, 164, 0.1);
   font-weight: 400;
@@ -1056,6 +1165,11 @@ input[type=checkbox] {
   color: #FFFFFF;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+@media screen and (max-width: 1199px) {
+  .select2-container--custom-select .select2-selection--single {
+    font-size: 1rem;
+  }
 }
 .select2-container--custom-select .select2-selection--single .select2-selection__rendered {
   padding-left: 0;
@@ -1108,7 +1222,7 @@ input[type=checkbox] {
   padding: 10px 0;
 }
 .select2-container:not(.select2).select2-container--custom-select .select2-results__option {
-  padding: 14px 12px;
+  padding: 14px 25px;
   font-size: 0.8rem;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -1123,6 +1237,16 @@ input[type=checkbox] {
   position: relative;
   padding-left: 30px;
   cursor: pointer;
+}
+@media screen and (max-width: 1199px) {
+  .default-input-wrapper .default-checkbox_label {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .default-input-wrapper .default-checkbox_label {
+    font-size: 0.7rem;
+  }
 }
 .default-input-wrapper .default-checkbox_label:before {
   content: "";
@@ -1153,6 +1277,17 @@ input[type=checkbox] {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+@media screen and (max-width: 1199px) {
+  .default-input-wrapper .default-checkbox_label:after {
+    left: 8px;
+    top: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .default-input-wrapper .default-checkbox_label:after {
+    top: 1vw;
+  }
+}
 .default-input-wrapper .default-checkbox_label > a {
   border-bottom: 1px solid;
   -webkit-transition: all 0.4s ease;
@@ -1179,6 +1314,14 @@ input[type=checkbox] {
   border-radius: 50%;
   border: 1px solid #FFFFFF;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .top-btn {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 40px;
+    height: 40px;
+  }
 }
 .top-btn span {
   position: absolute;
