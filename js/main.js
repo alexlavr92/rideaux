@@ -116,6 +116,22 @@ jQuery(document).ready(function ($) {
                     nextEl: NextArrow,
                     prevEl: PrevArrow,
                 },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    type: 'bullets',
+                },
+                breakpoints: {
+                    1199: {
+                        slidesPerView: 1,
+                        slidesPerGroup: 1,
+                    },
+                    767: {
+                        spaceBetween: 15,
+                        slidesPerView: 1,
+                        slidesPerGroup: 1,
+                    },
+                },
                 // autoplay: {
                 //     delay: 5000,
                 //     disableOnInteraction: false,
@@ -170,39 +186,19 @@ jQuery(document).ready(function ($) {
         },
         checkAdaptive: function (windowWidth) {
             // console.log(windowWidth)
-            const headerWrapper = this.defaultsOptions.headerWrapper
+            const headerWrapper = this.defaultsOptions.headerWrapper,
+                headerAddress = headerWrapper.find('.header-address'),
+                headerMenuWrapper = headerWrapper.find('.header-menu-wrapper')
 
             if (windowWidth < 1200) {
-                if (headerWrapper.hasClass('show'))
-                    BlockScroll.open()
-                // console.log('jr')
-                // if ()
-                this.defaultsOptions.topSocials.prependTo('.header-inner')
-                const headerMob = this.defaultsOptions.headerMob
-                if (!this.defaultsOptions.headerMob.find('.header-nav').length) {
-                    const HeaderNav = this.defaultsOptions.headerOuter.find('.header-nav')
-                    HeaderNav.prependTo(headerMob.find('.header-mob-inner'))
-                }
-                if (!this.defaultsOptions.headerMob.find('.link-request').length) {
-                    const HeaderRequest = this.defaultsOptions.headerOuter.find('.link-request')
-                    HeaderRequest.appendTo(headerMob.find('.header-mob-inner'))
-                }
+                if (headerWrapper.hasClass('show')) BlockScroll.open()
+
+                headerAddress.appendTo(headerMenuWrapper)
+
             }
             else {
-                BlockScroll.close()
-                this.defaultsOptions.headerWrapper.removeClass('show')
-                this.defaultsOptions.headerMob.hide()
-                this.defaultsOptions.topSocials.prependTo('.top-section-content .new-container')
-
-                const headerDesc = this.defaultsOptions.headerOuter
-                if (this.defaultsOptions.headerMob.find('.header-nav').length) {
-                    const HeaderNav = this.defaultsOptions.headerMob.find('.header-nav')
-                    HeaderNav.prependTo(headerDesc.find('.header-inner'))
-                }
-                if (this.defaultsOptions.headerMob.find('.link-request').length) {
-                    const HeaderRequest = this.defaultsOptions.headerMob.find('.link-request')
-                    HeaderRequest.insertBefore(headerDesc.find('.header-inner .header-socials'))
-                }
+                headerWrapper.removeClass('show')
+                headerAddress.prependTo(headerWrapper.find('.header-right-wrapper'))
             }
         },
         checkSticky: function (scrollTop, headerOuter) {
@@ -216,7 +212,7 @@ jQuery(document).ready(function ($) {
             const $thisObj = this,
                 options = this.defaultsOptions
             // console.log(options.windowWidth)
-            // this.checkAdaptive(options.windowWidth)
+            this.checkAdaptive(options.windowWidth)
 
             let scrollTop = $(window).scrollTop();
             $thisObj.checkSticky(scrollTop, options.headerOuter)
@@ -234,11 +230,19 @@ jQuery(document).ready(function ($) {
                     options.windowWidth = document.body.clientWidth
                     // console.log(options.windowWidth)
                     // $thisObj.checkMargin()
-                    // $thisObj.checkAdaptive(options.windowWidth)
+                    $thisObj.checkAdaptive(options.windowWidth)
                 }
 
             })
-
+            const MenuBtn = options.headerWrapper.find('.header-menu_btn')
+            MenuBtn.on('click', function (e) {
+                if (options.windowWidth < 1200) {
+                    // console.log('click')
+                    const $this = $(this)
+                    options.headerWrapper.toggleClass('show')
+                }
+                else return false
+            })
             // options.headerHamburger.on('click', function (e) {
             //     e.preventDefault()
             //     options.headerMob.slideDown({
@@ -443,12 +447,14 @@ jQuery(document).ready(function ($) {
                         $thisFormHeight = $this.innerHeight()
                     RequestSuccess.fadeIn({
                         start: function () {
-                            if (docWidth < 1200)
-                                window.scrollTo(0, ($this.closest('.inline-request').offset().top - $('.header-outer').innerHeight()))
+                            if (docWidth < 1200 && !$this.closest('.modal').length)
+                                window.scrollTo(0, $this.closest('.form-inner-wrapper').offset().top - $('.header-outer').innerHeight() - 100)
                             $this.hide()
-                            $(this).css({
-                                'height': $thisFormHeight + 'px',
-                            })
+                            if (docWidth >= 1200) {
+                                $(this).css({
+                                    'height': $thisFormHeight + 'px',
+                                })
+                            }
                         },
                         /*   complete: function () {
                               console.log($this.offset().top)
@@ -547,8 +553,8 @@ jQuery(document).ready(function ($) {
             // console.log(header_offset)
         } else {
             if ($('header.show').length) {
-                BodyScroll = parseInt($('body').attr('data-body-scroll-fix'))
-                $('.header-mob .header-close').trigger('click')
+                // BodyScroll = parseInt($('body').attr('data-body-scroll-fix'))
+                $('.header-menu_btn').trigger('click')
             }
 
             header_offset = $('.header-outer').innerHeight();
@@ -557,9 +563,9 @@ jQuery(document).ready(function ($) {
         // console.log(header_offset)
         $thisHashOffset = $thisHash.offset().top
         let $scrollTop = $thisHashOffset - header_offset
-        if (BodyScroll != 0 && BodyScroll != undefined) {
-            $scrollTop = $scrollTop + BodyScroll
-        }
+        // if (BodyScroll != 0 && BodyScroll != undefined) {
+        //     $scrollTop = $scrollTop + BodyScroll
+        // }
         console.log($scrollTop)
 
         $("html, body")
@@ -672,7 +678,7 @@ jQuery(document).ready(function ($) {
 
 
 $(window).on('resize', function () {
-    // docWidth = document.body.clientWidth
+    docWidth = document.body.clientWidth
     // console.log(docWidth)
 })
 
