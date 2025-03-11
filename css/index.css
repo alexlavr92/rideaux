@@ -2209,7 +2209,7 @@ header.sticky .header-outer {
   position: absolute;
   left: -2rem;
   bottom: 100%;
-  margin-bottom: -50px;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 1199px) {
   .history-inner .img-bg {
